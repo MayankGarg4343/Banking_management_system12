@@ -15,6 +15,21 @@ public class Login extends JFrame {
         image.setBounds(350,10,100,100); // by this we will decide where the image must be visible on the frame.
         add(image); // by this function we can add the image.
 
+        ImageIcon ii1 = new ImageIcon(ClassLoader.getSystemResource("icon/card.png")); // this is the card image section
+        Image ii2 = ii1.getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT);
+        ImageIcon ii3 = new ImageIcon(ii2);
+        JLabel iimage = new JLabel(ii3);
+        iimage.setBounds(630,350,100,100);
+        add(iimage);
+
+        ImageIcon iii1 = new ImageIcon(ClassLoader.getSystemResource("icon/backbg.png")); // this is background image section.
+        Image iii2 = iii1.getImage().getScaledInstance(850,480, Image.SCALE_DEFAULT);
+        ImageIcon iii3 = new ImageIcon(iii2);
+        JLabel iiimage = new JLabel(iii3);
+        iiimage.setBounds(0,0,850,480);
+        add(iiimage);
+
+
         setLayout(null); // default it is set as border.
         setSize(850,480); // this functions sets the width and size of the frame.
         setLocation(200,100); // in this we have to make the frame to open from the center. it have two
