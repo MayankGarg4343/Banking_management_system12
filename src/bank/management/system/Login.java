@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Login extends JFrame {
+    JLabel label1; // we have created the global object of the jlabel so that we can use it anywhere outside the constructor;
     Login(){ //constructor of the class.
         super("BANK MANAGEMENT SYSTEM"); // This will always remain on the top otherwise it will give
         // error and it is being used to give the title to the dialog box which is being generating.
@@ -22,13 +23,19 @@ public class Login extends JFrame {
         iimage.setBounds(630,350,100,100);
         add(iimage);
 
-        ImageIcon iii1 = new ImageIcon(ClassLoader.getSystemResource("icon/backbg.png")); // this is background image section.
+        label1 = new JLabel("WELCOME TO ATM"); // used to write the text on the frame.
+        label1.setForeground(Color.WHITE); // sets the color of the font.
+        label1.setFont(new Font("AvantGarde",Font.BOLD,38)); // sets the font properties.
+        label1.setBounds(230,125,450,40); // sets the position in the frame and the parameters are according to the frame.
+        add(label1); // adds the text to the frame.
+
+
+        ImageIcon iii1 = new ImageIcon(ClassLoader.getSystemResource("icon/backbg.png")); // this is background image section. and this remains at lower then the above content.
         Image iii2 = iii1.getImage().getScaledInstance(850,480, Image.SCALE_DEFAULT);
         ImageIcon iii3 = new ImageIcon(iii2);
         JLabel iiimage = new JLabel(iii3);
         iiimage.setBounds(0,0,850,480);
         add(iiimage);
-
 
         setLayout(null); // default it is set as border.
         setSize(850,480); // this functions sets the width and size of the frame.
