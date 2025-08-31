@@ -5,6 +5,8 @@ import java.awt.*;
 
 public class Login extends JFrame {
     JLabel label1, label2, label3; // we have created the global object of the jlabel so that we can use it anywhere outside the constructor;
+    JTextField textField2;
+    JPasswordField passwordField3;
     Login(){ //constructor of the class.
         super("BANK MANAGEMENT SYSTEM"); // This will always remain on the top otherwise it will give
         // error and it is being used to give the title to the dialog box which is being generating.
@@ -35,11 +37,23 @@ public class Login extends JFrame {
         label2.setBounds(150,190,375,30);
         add(label2);
 
-        label3 = new JLabel("PIN"); // made the pin field.
+        textField2  = new JTextField(15); // created the textfield for the card number.
+        textField2.setBounds(325,190,230,30);
+        textField2.setFont(new Font("Arial",Font.BOLD,14));
+        add(textField2);
+
+        label3 = new JLabel("PIN: "); // made the pin field.
         label3.setForeground(Color.WHITE);
         label3.setFont(new Font("Ralway",Font.BOLD,28));
         label3.setBounds(150,250,375,30);
         add(label3);
+
+        passwordField3 = new JPasswordField(15); // created the password input field for entering the password.
+        passwordField3.setBounds(325,250,230,30);
+        passwordField3.setFont(new Font("Arial",Font.BOLD,14));
+        add(passwordField3);
+
+
 
 
         ImageIcon iii1 = new ImageIcon(ClassLoader.getSystemResource("icon/backbg.png")); // this is background image section. and this remains at lower than the above content.
