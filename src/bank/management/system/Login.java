@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Login extends JFrame {
-    JLabel label1; // we have created the global object of the jlabel so that we can use it anywhere outside the constructor;
+    JLabel label1, label2, label3; // we have created the global object of the jlabel so that we can use it anywhere outside the constructor;
     Login(){ //constructor of the class.
         super("BANK MANAGEMENT SYSTEM"); // This will always remain on the top otherwise it will give
         // error and it is being used to give the title to the dialog box which is being generating.
@@ -29,8 +29,20 @@ public class Login extends JFrame {
         label1.setBounds(230,125,450,40); // sets the position in the frame and the parameters are according to the frame.
         add(label1); // adds the text to the frame.
 
+        label2 = new JLabel("Card No: "); // made the card no field
+        label2.setForeground(Color.WHITE);
+        label2.setFont(new Font("Ralway",Font.BOLD,28));
+        label2.setBounds(150,190,375,30);
+        add(label2);
 
-        ImageIcon iii1 = new ImageIcon(ClassLoader.getSystemResource("icon/backbg.png")); // this is background image section. and this remains at lower then the above content.
+        label3 = new JLabel("PIN"); // made the pin field.
+        label3.setForeground(Color.WHITE);
+        label3.setFont(new Font("Ralway",Font.BOLD,28));
+        label3.setBounds(150,250,375,30);
+        add(label3);
+
+
+        ImageIcon iii1 = new ImageIcon(ClassLoader.getSystemResource("icon/backbg.png")); // this is background image section. and this remains at lower than the above content.
         Image iii2 = iii1.getImage().getScaledInstance(850,480, Image.SCALE_DEFAULT);
         ImageIcon iii3 = new ImageIcon(iii2);
         JLabel iiimage = new JLabel(iii3);
@@ -39,8 +51,8 @@ public class Login extends JFrame {
 
         setLayout(null); // default it is set as border.
         setSize(850,480); // this functions sets the width and size of the frame.
-        setLocation(200,100); // in this we have to make the frame to open from the center. it have two
-        // 2 arguements first is x from left and the second is y from top.
+        setLocation(200,100); // in this we have to make the frame to open from the center. it has two
+        // 2 arguments first is x from left and the second is y from top.
         setVisible(true); // this made true make the visibility of the frame on the screen.
     }
     public static void main(String[] args) {
