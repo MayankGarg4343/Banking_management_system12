@@ -2,12 +2,19 @@ package bank.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener {
+
+    // ActionListener is being used to implement the click events on the button.
+    // now we will add the addActionListener on each and every button.
+
     JLabel label1, label2, label3; // we have created the global object of the jlabel so that we can use it anywhere outside the constructor;
     JTextField textField2;
     JPasswordField passwordField3;
     JButton button1,button2,button3;
+
     Login(){ //constructor of the class.
         super("BANK MANAGEMENT SYSTEM"); // This will always remain on the top otherwise it will give
         // error and it is being used to give the title to the dialog box which is being generating.
@@ -54,18 +61,20 @@ public class Login extends JFrame {
         passwordField3.setFont(new Font("Arial",Font.BOLD,14));
         add(passwordField3);
 
-        button1 = new JButton("SIGN IN");
-        button1.setFont(new Font("Arial",Font.BOLD,14));
+        button1 = new JButton("SIGN IN"); // to set up the button name.
+        button1.setFont(new Font("Arial",Font.BOLD,14)); // designing part.
         button1.setForeground(Color.WHITE);
         button1.setBackground(Color.DARK_GRAY);
-        button1.setBounds(300,300,100,30);
-        add(button1);
+        button1.setBounds(300,300,100,30); // setted the dimentions.
+        button1.addActionListener(this); // added the click event
+        add(button1); // added the button on the frame.
 
         button2 = new JButton("CLEAR");
         button2.setFont(new Font("Arial",Font.BOLD,14));
         button2.setForeground(Color.WHITE);
         button2.setBackground(Color.DARK_GRAY);
         button2.setBounds(430,300,100,30);
+        button2.addActionListener(this);
         add(button2);
 
         button3 = new JButton("SIGN UP");
@@ -73,6 +82,7 @@ public class Login extends JFrame {
         button3.setForeground(Color.WHITE);
         button3.setBackground(Color.DARK_GRAY);
         button3.setBounds(300,350,230,30);
+        button3.addActionListener(this);
         add(button3);
 
 
@@ -91,5 +101,26 @@ public class Login extends JFrame {
     }
     public static void main(String[] args) {
         new Login();
+    }
+
+
+    // jab bhi hamare button pe click hoga to who kaha ja ke store ho jayega ActionEvent ke andar ja ke store ho jayega.
+    //
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        try{
+            if(e.getSource()==button1){
+
+            }
+            else if(e.getSource()==button2){
+
+            }
+            else if(e.getSource()==button3){
+
+            }
+        }catch (Exception E){
+            E.printStackTrace(); // what ever the error come it will show us the error.
+        }
     }
 }
